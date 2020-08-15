@@ -85,7 +85,8 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $curso = Curso::find($id);
+        return view('cursos.edit', compact('curso')); 
     }
 
     /**
@@ -97,7 +98,31 @@ class CursoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+            'codigo'=>'required',
+            'ciclo' => 'required',
+            'semestre' => 'required'
+            
+        ]);
+
+        $curso = new Curso([
+            'nombre' => $request->get('nombre'),
+            'codigo' => $request->get('codigo'),
+            'ciclo' => $request->get('ciclo'),
+            'semestre' => $request->get('semestre'),
+            'descripcion' => $request->get('descripcion')
+        ]);        
+
+        $curso = Curso::find($id);
+        $curso->nombre =  $request->get('nombre');
+        $curso->codigo = $request->get('codigo');
+        $curso->ciclo = $request->get('ciclo');
+        $curso->semestre = $request->get('semestre');
+        $curso->descripcion = $request->get('descripcion');
+        $curso->save();
+
+        return redirect('/cursos')->with('success', '¡Curso actualizado!');
     }
 
     /**

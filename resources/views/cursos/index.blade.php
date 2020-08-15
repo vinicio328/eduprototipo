@@ -23,7 +23,7 @@
 					<td>Codigo</td>
 					<td>Semestre</td>
 					<td>Ciclo</td>
-					<td>Descripcion</td>
+					<td>Descripción</td>
 					<td colspan = 2>Acciones</td>
 				</tr>
 			</thead>
