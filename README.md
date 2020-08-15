@@ -1,27 +1,55 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+	<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+	<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+	<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+	<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
 ## Admin User 
-Copiar estos al .env para generar el usuario por defecto 
-ADMIN_NAME="Administrador"
-ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=password
-
+<ul>
+	<li>
+		Copiar estos al .env para generar el usuario por defecto 
+	</li>
+	<li>
+		ADMIN_NAME="Administrador"
+	</li>
+	<li>
+		ADMIN_EMAIL=admin@example.com
+	</li>
+	<li>
+		ADMIN_PASSWORD=password
+	</li>
+</ul>
 
 ## Dev Setup
-composer install
-npm install
-php artisan key:generate
-npm run dev o npm run prod 
-php artisan migrate 
-composer dumpautoload
-php artisan db:seed --force
+<ul>
+	<li>
+		composer install
+	</li>
+	<li>
+		npm install
+	</li>
+	<li>
+		renombrar el .env.example  a .env
+	</li>
+	<li>
+		php artisan key:generate
+	</li>
+	<li>
+		npm run dev o npm run prod 
+	</li>	
+	<li>
+		composer dumpautoload
+	</li>
+	<li>
+		php artisan migrate 
+	</li>
+	<li>
+		php artisan db:seed --force
+	</li>
+</ul>
 
 ## About Laravel
 
