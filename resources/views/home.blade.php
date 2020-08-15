@@ -20,7 +20,7 @@
 				<h4 class="my-0 font-weight-normal">Cursos</h4>
 			</div>
 			<div class="card-body">
-				<a class="btn btn-lg btn-block btn-primary" href="{{ route('estudiantes.index') }}">Cursos</a>
+				<a class="btn btn-lg btn-block btn-primary" href="{{ route('cursos.index') }}">Cursos</a>
 			</div>
 		</div>
 		<div class="card mb-4 box-shadow">

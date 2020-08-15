@@ -37,7 +37,7 @@
 							<a href="{{route('estudiantes.index')}}" class="nav-link">Estudiantes</a>
 						</li>
 						<li>
-							<a href="#" class="nav-link">Cursos</a>
+							<a href="{{route('cursos.index')}}" class="nav-link">Cursos</a>
 						</li>
 						<li>
 							<a href="#" class="nav-link">Notas</a>

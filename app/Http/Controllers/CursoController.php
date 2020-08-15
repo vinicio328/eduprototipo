@@ -24,7 +24,9 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $cursos = Curso::all();
+
+        return view('cursos.index', compact('cursos'));
     }
 
     /**
@@ -56,7 +58,7 @@ class CursoController extends Controller
         $curso = new Curso([
             'nombre' => $request->get('nombre'),
             'codigo' => $request->get('codigo'),
-            'cliclo' => $request->get('cliclo'),
+            'ciclo' => $request->get('ciclo'),
             'semestre' => $request->get('semestre'),
             'descripcion' => $request->get('descripcion')
         ]);
