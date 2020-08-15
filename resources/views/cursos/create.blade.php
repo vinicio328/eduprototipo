@@ -38,7 +38,7 @@
 					<input type="number" class="form-control" name="semestre"/>
 				</div>
 				<div class="form-group">
-					<label for="descripcion">Descripcion:</label>
+					<label for="descripcion">Descripción:</label>
 					<textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
 				</div>                         
 				<button type="submit" class="btn btn-primary">Agregar curso</button>
