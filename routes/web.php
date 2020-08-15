@@ -17,6 +17,10 @@ App::setLocale('es');
 
 Auth::routes();
 
+Route::get('home', function () {
+    return redirect('/');
+});
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('estudiantes', 'EstudianteController');
