@@ -26,9 +26,9 @@ class ActividadController extends Controller
      */
     public function index($curso_id)
     {
-        $actividades = Curso::find($curso_id)->actividades;
+        $curso = Curso::find($curso_id);
          
-        return view('actividades.index', compact('actividades', 'curso_id'));
+        return view('actividades.index', compact('curso', 'curso_id'));
     }
 
     /**
@@ -63,7 +63,7 @@ class ActividadController extends Controller
             
         ]);
         $actividad->save();
-        
+
         return redirect()->route('cursos.actividades.index', $curso_id)->with('success', '¡Actividad Guardada!');        
 
     }
@@ -108,8 +108,11 @@ class ActividadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($curso_id, $id)
     {
-        //
+        $actividad = Actividad::find($id);
+        $actividad->delete();
+
+        return redirect()->route('cursos.actividades.index', $curso_id)->with('success', 'Actividad eliminada!');
     }
 }

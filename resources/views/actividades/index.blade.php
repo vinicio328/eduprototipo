@@ -11,43 +11,37 @@
 		@endif
 	</div>
 	<div class="col-sm-12">
-		<h1>Actividades del curso</h1>    
+		<h1>{{ $curso->nombre }} - Actividades</h1>    
 		<div>
 			<a style="margin: 19px;" href="{{ route('cursos.actividades.create', $curso_id)}}" class="btn btn-primary">Nueva actividad</a>
 		</div>  
 		<table class="table table-striped">
 			<thead>
-				<!-- <tr>
-					<td>ID</td>
+				<tr>
 					<td>Nombre</td>
-					<td>Codigo</td>
-					<td>Semestre</td>
-					<td>Ciclo</td>
-					<td>Descripción</td>
-					<td colspan = 2>Acciones</td>
-				</tr> -->
+					<td>Descripcion</td>
+					<td>Valor</td>
+					<td colspan = 2 style="width: 20%">Acciones</td>
+				</tr>
 			</thead>
 			<tbody>
-				<!-- @foreach($actividades as $curso)
+				@foreach($curso->actividades as $actividad)
 				<tr>
-					<td>{{$curso->id}}</td>
-					<td>{{$curso->nombre}}</td>
-					<td>{{$curso->codigo}}</td>
-					<td>{{$curso->semestre}}</td>
-					<td>{{$curso->ciclo}} Semestre</td>
-					<td>{{$curso->descripcion}}</td>
+					<td>{{$actividad->nombre}}</td>
+					<td>{{$actividad->descripcion}}</td>
+					<td>{{$actividad->valor}}</td>
 					<td>
-						<a href="{{ route('cursos.edit',$curso->id)}}" class="btn btn-primary">Editar</a>
+						<a href="{{ route('cursos.actividades.edit', [$curso->id, $actividad->id])}}" class="btn btn-primary">Editar</a>
 					</td>
 					<td>
-						<form action="{{ route('cursos.destroy', $curso->id)}}" method="post">
+						<form action="{{ route('cursos.actividades.destroy', [$curso->id, $actividad->id])}}" method="post">
 							@csrf
 							@method('DELETE')
 							<button class="btn btn-danger" type="submit">Borrar</button>
 						</form>
 					</td>
 				</tr>
-				@endforeach -->
+				@endforeach
 			</tbody>
 		</table>
 	</div>
