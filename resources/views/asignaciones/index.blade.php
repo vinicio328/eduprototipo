@@ -23,7 +23,7 @@
 					<td>Semestre</td>
 					<td>Ciclo</td>
 					<td>Descripción</td>
-					<td>Acciones</td>
+					<td colspan="2" style="width: 20%">Acciones</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,7 +35,10 @@
 					<td>{{$curso->ciclo}} Semestre</td>
 					<td>{{$curso->descripcion}}</td>
 					<td>
-						<form action="{{ route('estudiantes.asignaciones.destroy', $estudiante_id, $curso->id)}}" method="post">
+						<a href="{{ route('estudiantes.cursos.notas.create', [$estudiante_id, $curso->id])}}" class="btn btn-primary">Notas</a>
+					</td>
+					<td>
+						<form action="{{ route('estudiantes.asignaciones.destroy', [$estudiante_id, $curso->id])}}" method="post">
 							@csrf
 							@method('DELETE')
 							<button class="btn btn-danger" type="submit">Desasignar</button>

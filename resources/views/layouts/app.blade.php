@@ -39,9 +39,6 @@
 						<li>
 							<a href="{{route('cursos.index')}}" class="nav-link">Cursos</a>
 						</li>
-						<li>
-							<a href="#" class="nav-link">Notas</a>
-						</li>
 					</ul>
 
 					<!-- Right Side Of Navbar -->

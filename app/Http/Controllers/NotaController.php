@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Curso;
-use App\Actividad;
 
-class ActividadController extends Controller
+class NotaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,18 +15,15 @@ class ActividadController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
-     * @param  int  $curso_id
      * @return \Illuminate\Http\Response
      */
-    public function index($curso_id)
+    public function index()
     {
-        $actividades = Curso::find($curso_id)->actividades;
-         
-        return view('actividades.index', compact('actividades', 'curso_id'));
+        //
     }
 
     /**
@@ -36,9 +31,12 @@ class ActividadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($curso_id)
+    public function create($estudiante_id, $curso_id)
     {
-        return view('actividades.create', compact('curso_id'));
+        // TODO, si hay datos ingresados hacer bind del modelo, sino usar template para nuevo
+
+        return view('notas.create');
+
     }
 
     /**
@@ -47,25 +45,9 @@ class ActividadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($curso_id, Request $request)
+    public function store(Request $request)
     {
-        $request->validate([
-            'nombre'=>'required',
-            'descripcion'=>'required',
-            'valor'=>'required'
-        ]);
-
-        $actividad = new Actividad([
-            'nombre' => $request->get('nombre'),
-            'descripcion' => $request->get('descripcion'),
-            'valor' => $request->get('valor'),
-            'curso_id' => $curso_id,
-            
-        ]);
-        $actividad->save();
-        
-        return redirect()->route('cursos.actividades.index', $curso_id)->with('success', '¡Actividad Guardada!');        
-
+        //
     }
 
     /**

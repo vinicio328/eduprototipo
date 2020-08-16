@@ -27,6 +27,8 @@ Route::resource('estudiantes', 'EstudianteController');
 
 Route::resource('estudiantes.asignaciones', 'AsignacionController');
 
+Route::resource('estudiantes.cursos.notas', 'NotaController');
+
 Route::resource('cursos', 'CursoController');
 
 Route::resource('cursos.actividades', 'ActividadController');
