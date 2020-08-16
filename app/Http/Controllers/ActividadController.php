@@ -26,9 +26,9 @@ class ActividadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($curso_id)
     {
-        //
+        return view('actividades.create', compact('curso_id'));
     }
 
     /**
@@ -37,9 +37,25 @@ class ActividadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($curso_id, Request $request)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+            'descripcion'=>'required',
+            'valor'=>'required'
+        ]);
+
+        $actividad = new Actividad([
+            'nombre' => $request->get('nombre'),
+            'descripcion' => $request->get('descripcion'),
+            'valor' => $request->get('valor'),
+            'curso_id' => $curso_id,
+            
+        ]);
+        $actividad->save();
+        
+        return redirect()->route('cursos.actividades.index', $curso_id)->with('success', '¡Actividad Guardada!');        
+
     }
 
     /**
