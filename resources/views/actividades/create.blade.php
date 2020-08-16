@@ -22,14 +22,15 @@
           </div>
 
           <div class="form-group">
-              <label for="descripcion">Descripcion:</label>
-              <input type="text" class="form-control" name="descripcion"/>
-          </div>
-
-          <div class="form-group">
               <label for="valor">Valor:</label>
               <input type="number" class="form-control" name="valor"/>
-          </div>                           
+          </div>   
+
+          <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+            </div>
+                                  
           <button type="submit" class="btn btn-primary">Agregar Actividad</button>
       </form>
   </div>

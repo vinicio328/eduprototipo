@@ -37,11 +37,11 @@
             </div>
             <div class="form-group">
                 <label for="semestre">Semestre:</label>
-                <input type="text" class="form-control" name="semestre" value={{ $curso->semestre }} />
+                <input type="text" class="form-control" name="semestre" value="{{ $curso->semestre }}" />
             </div>
             <div class="form-group">
-                <label for="country">Descripción:</label>
-                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" value={{ $curso->descripcion }}></textarea>
+                <label for="descripcion">Descripción:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3">{{ $curso->descripcion }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

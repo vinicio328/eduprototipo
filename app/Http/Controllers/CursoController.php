@@ -104,15 +104,7 @@ class CursoController extends Controller
             'ciclo' => 'required',
             'semestre' => 'required'
             
-        ]);
-
-        $curso = new Curso([
-            'nombre' => $request->get('nombre'),
-            'codigo' => $request->get('codigo'),
-            'ciclo' => $request->get('ciclo'),
-            'semestre' => $request->get('semestre'),
-            'descripcion' => $request->get('descripcion')
-        ]);        
+        ]);     
 
         $curso = Curso::find($id);
         $curso->nombre =  $request->get('nombre');

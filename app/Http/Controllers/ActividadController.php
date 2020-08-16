@@ -85,9 +85,10 @@ class ActividadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($curso_id, $id)
     {
-        //
+        $actividad = Actividad::find($id);
+        return view('actividades.edit', compact('actividad'));
     }
 
     /**
@@ -97,9 +98,23 @@ class ActividadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $curso_id, $id)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+            'descripcion'=>'required',
+            'valor' => 'required'
+            
+        ]);       
+
+        $actividad = Actividad::find($id);
+        $actividad->nombre =  $request->get('nombre');
+        $actividad->descripcion = $request->get('descripcion');
+        $actividad->valor = $request->get('valor');
+        
+        $actividad->save();
+
+        return redirect()->route('cursos.actividades.index', $curso_id)->with('success', '¡Actividad actualizada!');
     }
 
     /**
@@ -113,6 +128,6 @@ class ActividadController extends Controller
         $actividad = Actividad::find($id);
         $actividad->delete();
 
-        return redirect()->route('cursos.actividades.index', $curso_id)->with('success', 'Actividad eliminada!');
+        return redirect()->route('cursos.actividades.index', $curso_id)->with('success', '¡Actividad eliminada!');
     }
 }
