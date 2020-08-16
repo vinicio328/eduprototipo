@@ -23,14 +23,6 @@
 				<a class="btn btn-lg btn-block btn-primary" href="{{ route('cursos.index') }}">Cursos</a>
 			</div>
 		</div>
-		<div class="card mb-4 box-shadow">
-			<div class="card-header">
-				<h4 class="my-0 font-weight-normal">Notas</h4>
-			</div>
-			<div class="card-body">
-				<a class="btn btn-lg btn-block btn-primary" href="{{ route('estudiantes.index') }}">Notas</a>
-			</div>
-		</div>
 	</div>
 </div>
 
