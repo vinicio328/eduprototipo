@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Estudiante;
+use App\Curso;
 
 class NotaController extends Controller
 {
@@ -33,9 +35,10 @@ class NotaController extends Controller
      */
     public function create($estudiante_id, $curso_id)
     {
-        // TODO, si hay datos ingresados hacer bind del modelo, sino usar template para nuevo
+        $estudiante = Estudiante::find($estudiante_id);
+        $curso = Curso::find($curso_id);
 
-        return view('notas.create');
+        return view('notas.create', compact('estudiante', 'curso'));
 
     }
 
@@ -45,9 +48,9 @@ class NotaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $estudiante_id, $curso_id)
     {
-        //
+        return redirect()->route('estudiantes.asignaciones.index', $estudiante_id)->with('success', '¡Notas Guardadas!');  
     }
 
     /**
