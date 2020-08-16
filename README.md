@@ -8,10 +8,9 @@
 </p>
 
 ## Admin User 
-<ul>
-	<li>
-		Copiar estos al .env para generar el usuario por defecto 
-	</li>
+Copiar estos al .env para generar el usuario por defecto 
+
+<ul>		
 	<li>
 		ADMIN_NAME="Administrador"
 	</li>
@@ -22,6 +21,9 @@
 		ADMIN_PASSWORD=password
 	</li>
 </ul>
+
+## Montar App DEV
+Se recomienda Laragon, pero al ser PHP se puede montar en cualquier servidor apache. 
 
 ## Dev Setup
 <ul>
@@ -50,6 +52,8 @@
 		php artisan db:seed --force
 	</li>
 </ul>
+
+
 
 ## About Laravel
 
