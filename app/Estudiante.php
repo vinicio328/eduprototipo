@@ -12,4 +12,9 @@ class Estudiante extends Model
 		'email',
 		'carnet'
 	];
+
+	public function cursos()
+    {
+        return $this->belongsToMany(Curso::class, 'curso_estudiante');
+    }
 }

@@ -22,7 +22,7 @@
 					<td>Nombre</td>
 					<td>Email</td>
 					<td>Carnet</td>
-					<td colspan = 2>Acciones</td>
+					<td colspan = 3>Acciones</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,6 +34,9 @@
 					<td>{{$estudiante->carnet}}</td>
 					<td>
 						<a href="{{ route('estudiantes.edit',$estudiante->id)}}" class="btn btn-primary">Editar</a>
+					</td>
+					<td>
+						<a href="{{ route('estudiantes.asignaciones.index',$estudiante->id)}}" class="btn btn-secondary">Asignaciones</a>
 					</td>
 					<td>
 						<form action="{{ route('estudiantes.destroy', $estudiante->id)}}" method="post">

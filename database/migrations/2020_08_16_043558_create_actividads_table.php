@@ -20,7 +20,7 @@ class CreateActividadsTable extends Migration
             $table->string('descripcion');
             $table->integer('valor');
             $table->unsignedInteger('curso_id');
-            $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
         });
     }
 

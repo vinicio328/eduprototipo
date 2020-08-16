@@ -18,4 +18,9 @@ class Curso extends Model
     {
         return $this->hasMany('App\Actividad');
     }
+
+    public function estudiantes()
+    {
+        return $this->belongsToMany(Estudiante::class, 'curso_estudiante');
+    }
 }
