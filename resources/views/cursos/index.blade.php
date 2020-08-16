@@ -24,7 +24,7 @@
 					<td>Semestre</td>
 					<td>Ciclo</td>
 					<td>Descripción</td>
-					<td colspan = 3>Acciones</td>
+					<td colspan="3" style="width:30%">Acciones</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,7 +42,7 @@
 					<td>
 						<a href="{{ route('cursos.actividades.index',$curso->id)}}" class="btn btn-secondary">Actividades</a>
 					</td>
-					<td>
+					<td width="25px">
 						<form action="{{ route('cursos.destroy', $curso->id)}}" method="post">
 							@csrf
 							@method('DELETE')

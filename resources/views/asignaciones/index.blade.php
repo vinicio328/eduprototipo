@@ -35,7 +35,7 @@
 					<td>{{$curso->ciclo}} Semestre</td>
 					<td>{{$curso->descripcion}}</td>
 					<td>
-						<form action="{{ route('estudiantes.asignaciones.destroy', $estudiante_id, $curso->id)}}" method="post">
+						<form action="{{ route('estudiantes.asignaciones.destroy', [$estudiante_id, $curso->id])}}" method="post">
 							@csrf
 							@method('DELETE')
 							<button class="btn btn-danger" type="submit">Desasignar</button>

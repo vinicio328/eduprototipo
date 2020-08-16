@@ -28,7 +28,11 @@ class AsignacionController extends Controller
      */
     public function create($estudiante_id)
     {
-        //
+        $cursosAsignados = Estudiante::find($estudiante_id)->cursos;
+        $todosLosCursos = Curso::all();
+        $cursos = $todosLosCursos->diff($cursosAsignados);
+
+        return view('asignaciones.create', compact('cursos', 'estudiante_id'));
     }
 
     /**
@@ -37,9 +41,12 @@ class AsignacionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($estudiante_id, Request $request)
     {
-        //
+        $estudiante = Estudiante::find($estudiante_id);        
+        $estudiante->cursos()->attach($request->get('cursos'));
+
+        return redirect()->route('estudiantes.asignaciones.index', $estudiante_id)->with('success', '¡Asignación actualizada!');   
     }
 
     /**

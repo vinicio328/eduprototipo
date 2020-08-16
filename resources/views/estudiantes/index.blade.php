@@ -22,7 +22,7 @@
 					<td>Nombre</td>
 					<td>Email</td>
 					<td>Carnet</td>
-					<td colspan = 3>Acciones</td>
+					<td colspan="3" style="width: 30%">Acciones</td>
 				</tr>
 			</thead>
 			<tbody>
