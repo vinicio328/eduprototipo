@@ -13,4 +13,9 @@ class Curso extends Model
 		'ciclo',
 		'semestre'
 	];
+	
+    public function actividades()
+    {
+        return $this->hasMany('App\Actividad');
+    }
 }

@@ -11,24 +11,24 @@
 		@endif
 	</div>
 	<div class="col-sm-12">
-		<h1>Cursos</h1>    
+		<h1>Actividades del curso</h1>    
 		<div>
-			<a style="margin: 19px;" href="{{ route('cursos.create')}}" class="btn btn-primary">Nuevo curso</a>
+			<a style="margin: 19px;" href="{{ route('cursos.actividades.create', $curso_id)}}" class="btn btn-primary">Nueva actividad</a>
 		</div>  
 		<table class="table table-striped">
 			<thead>
-				<tr>
+				<!-- <tr>
 					<td>ID</td>
 					<td>Nombre</td>
 					<td>Codigo</td>
 					<td>Semestre</td>
 					<td>Ciclo</td>
 					<td>Descripción</td>
-					<td colspan = 3>Acciones</td>
-				</tr>
+					<td colspan = 2>Acciones</td>
+				</tr> -->
 			</thead>
 			<tbody>
-				@foreach($cursos as $curso)
+				<!-- @foreach($actividades as $curso)
 				<tr>
 					<td>{{$curso->id}}</td>
 					<td>{{$curso->nombre}}</td>
@@ -40,9 +40,6 @@
 						<a href="{{ route('cursos.edit',$curso->id)}}" class="btn btn-primary">Editar</a>
 					</td>
 					<td>
-						<a href="{{ route('cursos.actividades.index',$curso->id)}}" class="btn btn-secondary">Actividades</a>
-					</td>
-					<td>
 						<form action="{{ route('cursos.destroy', $curso->id)}}" method="post">
 							@csrf
 							@method('DELETE')
@@ -50,7 +47,7 @@
 						</form>
 					</td>
 				</tr>
-				@endforeach
+				@endforeach -->
 			</tbody>
 		</table>
 	</div>

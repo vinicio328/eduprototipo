@@ -11,7 +11,7 @@
 		@endif
 	</div>
 	<div class="col-sm-12">
-		<h1 class="display-3">Estudiantes</h1>    
+		<h1>Estudiantes</h1>    
 		<div>
 			<a style="margin: 19px;" href="{{ route('estudiantes.create')}}" class="btn btn-primary">Nuevo estudiante</a>
 		</div>  
