@@ -39,7 +39,7 @@
 						<a href="{{ route('estudiantes.asignaciones.index',$estudiante->id)}}" class="btn btn-primary">Asignaciones</a>
 					</td>
 					<td>
-						<a href="#" class="btn btn-primary">Boleta</a>
+						<a href="{{ route('estudiante.print', $estudiante->id) }}" target="_blank" class="btn btn-primary">Boleta</a>
 					</td>
 					<td>
 						<form action="{{ route('estudiantes.destroy', $estudiante->id)}}" method="post">

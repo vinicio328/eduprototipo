@@ -32,3 +32,5 @@ Route::resource('estudiantes.cursos.notas', 'NotaController');
 Route::resource('cursos', 'CursoController');
 
 Route::resource('cursos.actividades', 'ActividadController');
+
+Route::get('/dynamic_pdf/pdf/{estudiante_id}', 'DynamicPDFController@pdf')->name('estudiante.print');
