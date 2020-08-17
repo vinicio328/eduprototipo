@@ -41,11 +41,19 @@
 								</td>
 							</tr>
 							@endforeach
+							@if ($curso->actividades->count() == 0)
+							<tr>
+								<td colspan="3">
+									No hay actividades en el curso
+								</td>
+							</tr>
+							@endif
 						</tbody>
 					</table>				
 				</div>				
 
 				<button type="submit" class="btn btn-primary">Guardar</button>
+				<a href="{{ route('estudiantes.asignaciones.index', $estudiante->id)}}" class="btn btn-secondary">Cancelar</a>
 			</form>
 		</div>
 	</div>

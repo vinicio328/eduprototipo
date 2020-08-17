@@ -32,7 +32,14 @@
 				<br>
 				@endforeach
 
+				@if ($cursos->count() == 0) 
+				<div class="form-group">
+					<label for="" class="from-label">No hay cursos disponibles</label>
+				</div>
+				@endif
+
 				<button type="submit" class="btn btn-primary">Asignar</button>
+				<a href="{{ route('estudiantes.asignaciones.index', $estudiante_id)}}" class="btn btn-secondary">Cancelar</a>
 			</form>
 		</div>
 	</div>

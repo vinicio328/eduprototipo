@@ -35,6 +35,7 @@
               <input type="text" class="form-control" name="carnet"/>
           </div>          
           <button type="submit" class="btn btn-primary">Agregar estudiante</button>
+          <a href="{{ route('estudiantes.index')}}" class="btn btn-secondary">Cancelar</a>
       </form>
   </div>
 </div>

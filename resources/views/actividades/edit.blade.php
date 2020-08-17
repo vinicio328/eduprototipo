@@ -33,6 +33,7 @@
                 <textarea class="form-control" id="descripcion" name="descripcion" rows="3">{{ $actividad->descripcion }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Editar</button>
+            <a href="{{ route('cursos.actividades.index', $actividad->curso_id)}}" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 </div>

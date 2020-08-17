@@ -42,6 +42,7 @@
 					<textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
 				</div>                         
 				<button type="submit" class="btn btn-primary">Agregar curso</button>
+				<a href="{{ route('cursos.index')}}" class="btn btn-secondary">Cancelar</a>
 			</form>
 		</div>
 	</div>

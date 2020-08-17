@@ -38,6 +38,7 @@
                 <input type="text" class="form-control" name="carnet" value="{{ $estudiante->carnet }}" />
             </div>
             <button type="submit" class="btn btn-primary">Editar</button>
+             <a href="{{ route('estudiantes.index')}}" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 </div>
